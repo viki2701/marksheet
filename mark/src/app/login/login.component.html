@@ -14,24 +14,28 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="basic-addon1"><i class="fa-regular fa-envelope"></i></span>
                 </div>
-                <input  type="text" class="form-control login-email" placeholder="Enter e-mail address" aria-label="Username" aria-describedby="basic-addon1" #username="ngModel" name="username" [(ngModel)]="loginform.userName" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" required >
-                <div>
-                    <span class="text-danger"  *ngIf="!username.valid && (username.touched || username.dirty)"> 
-                        <span class="text-danger" *ngIf="username.errors?.['required']">register e-mail ID is required</span>
-                        <span class="text-danger" *ngIf="username.errors?.['pattern']">e-mail is invalid formate</span>
-                        </span>
+                <input type="text" class="form-control login-email" placeholder="Enter e-mail address" aria-label="Username" aria-describedby="basic-addon1" #username="ngModel" name="username" [(ngModel)]="loginform.userName" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" required>
+            </div>
+            <div class="d-flex justify-content-end message">
+                <div  *ngIf="!username.valid && (username.touched || username.dirty)"> 
+                    <span class="text-danger" *ngIf="username.errors?.['required']">register e-mail ID is required</span>
+                    <span class="text-danger" *ngIf="username.errors?.['pattern']">e-mail is invalid format</span>
                 </div>
             </div>
+            
             <label class="mb-2" for="exampleInputPassword1">Password</label>
             <div class="input-group mb-3">
               <div class="input-group-prepend">
                   <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-key"></i></span>
               </div>
               <input  type="password" class="form-control login-password" placeholder="Enter Password" aria-label="Password" aria-describedby="basic-addon1" #password="ngModel" name="password" [(ngModel)]="loginform.passWord" required>
-              <span class="text-danger" *ngIf="!password.valid && (password.touched || password.dirty)">
-                password is required
-              </span>
-          </div>
+            </div>
+              <div>
+                <div class="text-danger d-flex justify-content-end message" *ngIf="!password.valid && (password.touched || password.dirty)">
+                    password is required
+                  </div>
+              </div>
+         
                 <div class="form-group form-check">
                   <input type="checkbox" class="form-check-input" id="exampleCheck1">
                   <label class="form-check-label" for="exampleCheck1">Remember me</label>
