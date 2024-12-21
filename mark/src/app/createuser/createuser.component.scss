@@ -17,3 +17,18 @@
 *input,*select{
     border-radius: 15px;
 }
+
+.input-error{
+    border-color:red;
+}
+
+.pincode-number::-webkit-outer-spin-button,
+.pincode-number::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.mobile-number::-webkit-outer-spin-button,
+.mobile-number::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
