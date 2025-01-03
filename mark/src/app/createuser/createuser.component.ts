@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component,} from '@angular/core';
 import { FormControl, FormGroup, FormsModule,ReactiveFormsModule, Validators } from '@angular/forms';
+import{StudentnameService} from '../service/studentname.service'
 
 @Component({
   selector: 'app-createuser',
@@ -10,6 +11,12 @@ import { FormControl, FormGroup, FormsModule,ReactiveFormsModule, Validators } f
   styleUrl: './createuser.component.scss'
 })
 export class CreateuserComponent {
+
+  studentdata:any;
+  constructor(SE:StudentnameService){
+    this.studentdata=SE.getdata();
+  }
+
   createuserform = new FormGroup ({
     firstName: new FormControl('',[Validators.required]),
     lastName: new FormControl(),

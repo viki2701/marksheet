@@ -158,4 +158,33 @@
         </div>
 
     </div>
+    <div class="row d-flex justify-content-center">
+      <div>
+          <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Age</th>
+                  <th scope="col">Date of Birth</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td *ngFor="let names of studentdata">{{names.name}}</td>
+                  
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td *ngFor="let age of studentdata">{{age.age}}</td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td *ngFor="let dob of studentdata">{{dob.dob}}</td>
+                </tr>
+              </tbody>
+            </table>
+      </div>
+  </div>
 </div>
